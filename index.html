@@ -1,60 +1,61 @@
-<html><meta charset="utf-8" /> 
-<head>
-<title>Angular Play</title>
+<html><meta charset="utf-8" /><head><title>Angular Play</title><style></style>
 
-<style>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js"></script>
 
-</style>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script> -->
 
-<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js"></script> -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.5.2/angular-resource.min.js"></script>
+
+
+
+
 
 <script type="text/javascript">
-var app = angular.module("DemoApp", []);
+	var app = angular.module("DemoApp", []);
 
-app.controller("demoAppCtrl", ["$http", "$scope", function($http, $scope) {
+	app.controller("demoAppCtrl", ["$http", "$scope", function($http, $scope) {
 
-// &scope.doClick = function () {
+		// &scope.doClick = function () {
 
 
-  /* HTTP requests */
-  
-  // var promise = $http.get("/pizzas");
-  // promise.then(function(response) {
-  //   console.log(response.data);
-  //   // $scope.pizzas = response.data;
-  // });
+			/* HTTP requests */
 
-  $scope.first = "Hiiiiiii";
-  $scope.second = "Different";
+			// var promise = $http.get("/pizzas");
+			// promise.then(function(response) {
+				//   console.log(response.data);
+				//   // $scope.pizzas = response.data;
+				// });
 
-  $scope.change = function() {
-    $scope.second = "What";
-  };
-}]);
+				$scope.first = "Hiiiiiii";
+				$scope.second = "ng-bind text";
 
-</script>
+				$scope.change = function() {
+					$scope.second = "What";
+				};
+			}]);
 
-</head>
-<body>
+		</script>
 
-<div ng-app="DemoApp">
+	</head>
+	<body>
 
-  <div ng-controller="demoAppCtrl">
-    
-    <!-- 2-WAY Binding -->    
-    <input type="text" ng-model="first" /><br />
+		<div ng-app="DemoApp">
 
-    <!-- 1-WAY Binding -->
-    <span ng-bind="first"></span><br />
-    {{ second }}
+			<div ng-controller="demoAppCtrl">
 
-    <input type="button" ng-click="change()" />
+				<!-- 2-WAY Binding -->    
+				<input type="text" ng-model="first" /><br />
 
-  </div>
-  
-</div>
+				<!-- 1-WAY Binding -->
+				<span ng-bind="first"></span><br />
+				{{ second }}
 
-</body>
-</html>
+				<input type="button" ng-click="change()" />
+
+			</div>
+
+		</div>
+
+	</body>
+	</html>
