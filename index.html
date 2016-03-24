@@ -1,52 +1,60 @@
-<html>
+<html><meta charset="utf-8" /> 
 <head>
-<title>Dafin Angular To Do</title>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js"></script>
-
-
-<script type="text/javascript">
-var app = angular.module("App, []");
-	app
-
-
-
-
-&scope.doClick = function () {
-	$scope
-
-
-}
-
-</script>
-
+<title>Angular Play</title>
 
 <style>
-#ctrlPanel {
-	display: inline-block;
-}
-
-
-.highlight
-
 
 </style>
 
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js"></script> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
+<script type="text/javascript">
+var app = angular.module("DemoApp", []);
+
+app.controller("demoAppCtrl", ["$http", "$scope", function($http, $scope) {
+
+// &scope.doClick = function () {
 
 
+  /* HTTP requests */
+  
+  // var promise = $http.get("/pizzas");
+  // promise.then(function(response) {
+  //   console.log(response.data);
+  //   // $scope.pizzas = response.data;
+  // });
+
+  $scope.first = "Hiiiiiii";
+  $scope.second = "Different";
+
+  $scope.change = function() {
+    $scope.second = "What";
+  };
+}]);
+
+</script>
 
 </head>
+<body>
 
-<body ng-app="App" ng-cpntroller="TodosCtrl">
-<input type="text" ng-model="x" />
-<input type="" name="">
-	
+<div ng-app="DemoApp">
 
-<div id="ctrlPanel"></div>
+  <div ng-controller="demoAppCtrl">
+    
+    <!-- 2-WAY Binding -->    
+    <input type="text" ng-model="first" /><br />
 
+    <!-- 1-WAY Binding -->
+    <span ng-bind="first"></span><br />
+    {{ second }}
 
+    <input type="button" ng-click="change()" />
 
-{{ x }}
-
+  </div>
+  
+</div>
 
 </body>
 </html>
